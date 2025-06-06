@@ -77,3 +77,42 @@ daily_arxiv/
 
 这个 Scrapy 项目是整个 arXiv 论文处理流水线的第一步，为后续的 AI 增强和 Markdown 转换提供原始数据。
         
+
+arXiv.org 是一个由康奈尔大学图书馆维护的开放获取的学术论文预印本平台，广泛用于发布计算机科学、人工智能、数学、物理等领域的研究成果。
+研究者可以在论文发表前，将初稿上传到 arXiv，让同行预先查看和引用。
+
+
+标签
+含义（研究领域）
+cs.CV
+Computer Vision（计算机视觉）
+cs.GR
+Graphics（图形学）
+cs.CL
+Computation and Language（自然语言处理）
+cs.AI
+Artificial Intelligence（人工智能）
+eess.AS
+Audio and Speech Processing（音频与语音处理）
+cs.CR
+Cryptography and Security（密码学与安全）
+cs.MA
+Multiagent Systems（多智能体系统）
+cs.LG
+Machine Learning（机器学习）
+cs.IR
+Information Retrieval（信息检索）
+astro-ph.SR
+Solar and Stellar Astrophysics（太阳与恒星天体物理）
+cs.RO
+Robotics（机器人学）
+eess.IV
+Image and Video Processing（图像与视频处理）
+cs.CY
+Computers and Society（计算机与社会）
+cs.HC
+Human-Computer Interaction（人机交互）
+cs.MM
+Multimedia（多媒体）
+cs.SD
+Sound（声音信号处理）
