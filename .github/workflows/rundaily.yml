@@ -1,0 +1,40 @@
+name: Daily Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 2 点执行
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 获取完整提交历史，避免 pull 出错
+
+      - name: Set up Git config
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Pull latest changes to avoid push rejection
+        run: git pull --rebase origin main
+
+      - name: Run your update script
+        run: |
+          # 假设你有一个 Python 或 Shell 脚本来更新内容
+          python update.py
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Daily update: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+
+      - name: Push changes back to main
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
